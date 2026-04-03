@@ -1,4 +1,4 @@
-# Hospital Emergency Room Management - Power BI Dashboard
+# 🏥 Hospital Emergency Room Management — Power BI Dashboard
 
 <div align="center">
 
@@ -9,103 +9,107 @@
 
 **An end-to-end data analytics project identifying ER operational bottlenecks across 9,216 patient visits**
 
-[View Live Dashboard](#) &nbsp;|&nbsp; [Explore the Data](#project-structure) &nbsp;|&nbsp; [Key Findings](#key-findings)
+[![Live Dashboard](https://img.shields.io/badge/🔗%20View%20Live%20Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](#-view-live-dashboard)
+&nbsp;
+[![Explore Data](https://img.shields.io/badge/📂%20Explore%20the%20Data-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)](#-project-structure)
+&nbsp;
+[![Key Findings](https://img.shields.io/badge/📊%20Key%20Findings-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)](#-key-findings)
 
 </div>
 
 ---
 
-## Table of Contents
+## 📋 Table of Contents
 
-- [Project Overview](#project-overview)
-- [Business Impact](#business-impact)
-- [Dashboard Pages](#dashboard-pages)
-- [Key Findings](#key-findings)
-- [Project Structure](#project-structure)
-- [Three-Tool Pipeline](#three-tool-pipeline)
-- [KPIs Measured](#kpis-measured)
-- [Data Source](#data-source)
-- [How to Use](#how-to-use)
-- [Screenshots](#screenshots)
-- [Future Enhancements](#future-enhancements)
-- [Author](#author)
+- [Project Overview](#-project-overview)
+- [Business Impact](#-business-impact)
+- [Dashboard Pages](#-dashboard-pages)
+- [Key Findings](#-key-findings)
+- [Project Structure](#-project-structure)
+- [Three-Tool Pipeline](#-three-tool-pipeline)
+- [KPIs Measured](#-kpis-measured)
+- [Data Source](#-data-source)
+- [How to Use](#-how-to-use)
+- [Screenshots](#-screenshots)
+- [Future Enhancements](#-future-enhancements)
+- [Author](#-author)
 
 ---
 
-## Project Overview
+## 📌 Project Overview
 
 Emergency Room overcrowding is one of the most critical operational challenges in modern healthcare. Long wait times directly reduce patient satisfaction, increase clinical risk, and strain staff across every shift.
 
-This project analyses **9,216 ER patient visits** spanning **18 months (April 2023 - October 2024)** using a full three-tool analytics pipeline:
+This project analyses **9,216 ER patient visits** spanning **18 months (April 2023 – October 2024)** using a full three-tool analytics pipeline:
 
-- **Excel** for data cleaning and feature engineering
-- **SQL Server (T-SQL)** for schema transformation, KPI computation, and reusable analytical views
-- **Power BI** for a five-page interactive dashboard
+- **Excel** — data cleaning and feature engineering
+- **SQL Server (T-SQL)** — schema transformation, KPI computation, and reusable analytical views
+- **Power BI** — five-page interactive dashboard with drill-through capability
 
 The goal is to answer four core operational questions:
 
-> 1. **Where is time being lost?** - Peak overcrowding periods by hour and day
-> 2. **Who is being affected?** - Demographic patterns in wait times and admissions
-> 3. **Which referral pathways are the problem?** - Department-level wait time analysis
-> 4. **Are patients satisfied?** - Satisfaction score correlation with wait time and the gap to hospital target
+> 1. **Where is time being lost?** — Peak overcrowding periods by hour and day
+> 2. **Who is being affected?** — Demographic patterns in wait times and admissions
+> 3. **Which referral pathways are the problem?** — Department-level wait time analysis
+> 4. **Are patients satisfied?** — Satisfaction score correlation with wait time and the gap to hospital target
 
 ---
 
-## Business Impact
+## 💼 Business Impact
 
 This analysis highlights critical operational inefficiencies in ER workflows:
 
 - Identified **system-wide overcrowding patterns**, not limited to specific time windows
 - Quantified patient experience gaps, with satisfaction scores **22% below the hospital target**
-- Detected **department-specific bottlenecks** (e.g., Neurology referrals driving the longest delays despite lower volume)
+- Detected **department-specific bottlenecks** (e.g., Neurology referrals driving the longest average delays despite lower volume)
 - Provided actionable insights for:
-  - **Staffing optimisation** - using peak hour and day-of-week volume patterns
-  - **Referral pathway redesign** - addressing specialty bottlenecks before they reach the ER floor
-  - **Wait time reduction strategies** - targeting the 59.3% of patients waiting beyond the 30-minute benchmark
+  - **Staffing optimisation** — using peak hour and day-of-week volume patterns
+  - **Referral pathway redesign** — addressing specialty bottlenecks before they reach the ER floor
+  - **Wait time reduction strategies** — targeting the 59.3% of patients waiting beyond the 30-minute benchmark
 
 This project demonstrates how data analytics can directly support **hospital operations, patient experience, and clinical decision-making**.
 
 ---
 
-## Dashboard Pages
+## 📊 Dashboard Pages
 
 | # | Page | Focus Area | Key Visual |
 |---|------|------------|------------|
 | 1 | **Executive Overview** | Top-level KPIs, volume trends, referral breakdown | Dual-axis line chart + wait time donut |
-| 2 | **Wait Time & Overcrowding** | Hour-by-day heatmap, department delays, distribution | Day * Hour matrix with conditional formatting |
+| 2 | **Wait Time & Overcrowding** | Hour-by-day heatmap, department delays, distribution | Day × Hour matrix with conditional formatting |
 | 3 | **Patient Demographics** | Ethnicity, gender, age group breakdowns | Stacked bar by ethnicity + admission % by age |
 | 4 | **Patient Satisfaction** | Wait vs satisfaction correlation, gauge vs target | Scatter plot + satisfaction gauge |
 | 5 | **Patient Drill-Through** | Individual patient record on click | Detail table + per-patient wait gauge |
 
 ---
 
-## Key Findings
+## 🔍 Key Findings
 
 | Metric | Value | Benchmark | Status |
 |--------|-------|-----------|--------|
-| Average Wait Time | **35.30 mins** | < 30 mins |  Above target |
-| 90th Percentile Wait | **56.00 mins** | < 45 mins |  Critical |
-| Patients Waiting > 30 mins | **59.3%** | < 40% | Critical |
-| Patient Satisfaction Score | **5.47 / 10** | 7.0 / 10 | 22% below target |
-| Admission Rate | **50.04%** | Varies |  High acuity load |
+| Average Wait Time | **35.30 mins** | < 30 mins | ⚠️ Above target |
+| 90th Percentile Wait | **56.00 mins** | < 45 mins | 🔴 Critical |
+| Patients Waiting > 30 mins | **59.3%** | < 40% | 🔴 Critical |
+| Patient Satisfaction Score | **5.47 / 10** | 7.0 / 10 | 🔴 22% below target |
+| Admission Rate | **50.04%** | Varies | ℹ️ High acuity load |
 
 ### Insights
 
-- **Overcrowding is systemic, not isolated.** The Day * Hour heatmap shows consistently elevated wait times across all hours and days, with no meaningful off-peak relief window - indicating a capacity problem, not a scheduling problem.
+- **Overcrowding is systemic, not isolated.** The Day × Hour heatmap shows consistently elevated wait times across all hours and days, with no meaningful off-peak relief window — indicating a capacity problem, not a scheduling problem.
 
 - **1 in 10 patients waits nearly an hour.** The 90th percentile wait of 56 minutes represents a tangible patient safety risk, particularly for those who arrive requiring urgent attention and do not self-escalate.
 
-- **Satisfaction and wait time are inversely correlated.** The scatter plot on Page 4 confirms a clear downward trend - longer waits are consistently associated with lower satisfaction scores across all referral types.
+- **Satisfaction and wait time are inversely correlated.** The scatter plot on Page 4 confirms a clear downward trend — longer waits are consistently associated with lower satisfaction scores across all referral types.
 
-- **Neurology referrals drive the longest waits** despite lower volume than Self-Referral or General Practice - pointing to a specialist availability bottleneck rather than a volume issue.
+- **Neurology referrals drive the longest waits** despite lower volume than Self-Referral or General Practice — pointing to a specialist availability bottleneck rather than a volume issue.
 
-- **Half of all ER visits result in hospital admission** (50.04%), indicating the ER is operating under high clinical acuity - compounding the wait time and overcrowding challenge.
+- **Half of all ER visits result in hospital admission** (50.04%), indicating the ER is operating under high clinical acuity — compounding the wait time and overcrowding challenge.
 
 - **Satisfaction is 22% below the hospital target of 7.0.** Gastroenterology-referred patients score highest; Renal-referred patients score lowest — highlighting that referral pathway design directly affects the patient experience.
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 hospital-er-management-powerbi/
@@ -139,7 +143,7 @@ hospital-er-management-powerbi/
 
 ---
 
-## Three-Tool Pipeline
+## ⚙️ Three-Tool Pipeline
 
 ```
 ┌──────────────────┬──────────────────────┬─────────────────────────────────┐
@@ -159,15 +163,15 @@ hospital-er-management-powerbi/
 └──────────────────┴──────────────────────┴─────────────────────────────────┘
 ```
 
-### Excel - Data Cleaning & Feature Engineering
+### Excel — Data Cleaning & Feature Engineering
 
 - Imported raw CSV via **Power Query** and corrected all column data types
 - Handled null values in `patient_sat_score` for patients who did not submit a rating
 - Created five derived columns using conditional logic in Power Query:
-  - `Age_Group` - Paediatric / Adult / Senior
-  - `Arrival_Hour` - extracted from timestamp
-  - `Day_of_Week` - Monday through Sunday
-  - `Wait_Bucket` - 0–15 / 16–30 / 31–60 / 60+ mins
+  - `Age_Group` — Paediatric / Adult / Senior
+  - `Arrival_Hour` — extracted from visit timestamp
+  - `Day_of_Week` — Monday through Sunday
+  - `Wait_Bucket` — 0–15 / 16–30 / 31–60 / 60+ mins
   - `Satisfaction_Band` — Low / Medium / High / Not Rated
 - Built PivotTables for initial data profiling and summary KPI validation
 - Exported enriched file as `hospital_er_clean.csv` for SQL Server ingestion
@@ -177,12 +181,9 @@ hospital-er-management-powerbi/
 - Designed a structured schema by creating a dedicated `er` schema and migrating raw data into a standardised table (`ER_Visits`)
 - Performed data cleaning directly in SQL, including:
   - Renaming all columns to consistent uppercase naming conventions
-  - Converting incorrect data types (wait time as INT, satisfaction score as DECIMAL, date/time fields to DATETIME)
-- Built KPI queries to measure:
-  - Average wait time, patient satisfaction (excluding unrated records with score = 0), and admission rate
-- Developed analytical queries for:
-  - Demographic segmentation by age group, gender, and race/ethnicity
-  - Referral flow analysis and departmental bottleneck identification
+  - Converting incorrect data types (wait time as `INT`, satisfaction score as `DECIMAL`, date/time fields to `DATETIME`)
+- Built KPI queries to measure average wait time, patient satisfaction (excluding unrated records where score = 0), and admission rate
+- Developed analytical queries for demographic segmentation and referral flow bottleneck identification
 - Created four reusable SQL views consumed directly by Power BI:
   - `vw_er_kpis` — executive-level KPIs as a single-row summary
   - `vw_hourly_volume` — heatmap dataset (day × hour visit counts and average wait)
@@ -202,22 +203,22 @@ hospital-er-management-powerbi/
 
 ---
 
-## KPIs Measured
+## 📐 KPIs Measured
 
 | KPI | Formula | Why It Matters |
 |-----|---------|----------------|
 | Average Wait Time | `AVERAGE(wait_time_mins)` | Primary ER performance benchmark — target < 30 mins |
-| 90th Percentile Wait | `PERCENTILX(er_visits, wait, 0.9)` | Captures the tail-end patient experience — 1 in 10 patients |
-| % Waiting > 30 min | `COUNT(wait > 30) / total` | Overcrowding severity indicator |
-| Admission Rate | `SUM(admin_flag = 1) / total` | Reflects patient acuity and downstream bed pressure |
-| Avg Satisfaction Score | `AVG(sat_score) WHERE score > 0` | Patient experience metric — excludes unrated visits |
-| Unrated Patient % | `COUNT(sat = 0) / total` | Data quality flag and potential LWBS proxy |
-| Admitted vs Discharged Wait Gap | `Avg Wait(admitted) − Avg Wait(discharged)` | Boarding pressure indicator |
-| Peak Hour Volume | `MAX(COUNT per hour)` | Staffing and surge planning input |
+| 90th Percentile Wait | `PERCENTILEX.INC(er_visits, [wait_time_mins], 0.9)` | Captures the tail-end patient experience |
+| % Waiting > 30 min | `DIVIDE(CALCULATE(COUNTROWS(...), wait > 30), total)` | Overcrowding severity indicator |
+| Admission Rate | `DIVIDE(CALCULATE(COUNTROWS(...), admin_flag = 1), total)` | Reflects patient acuity and downstream bed pressure |
+| Avg Satisfaction Score | `CALCULATE(AVERAGE(sat_score), sat_score > 0)` | Patient experience — excludes unrated visits |
+| Unrated Patient % | `DIVIDE(CALCULATE(COUNTROWS(...), sat_score = 0), total)` | Data quality flag and potential LWBS proxy |
+| Admitted vs Discharged Wait Gap | `[Avg Wait (Admitted)] - [Avg Wait (Discharged)]` | Boarding pressure indicator |
+| Peak Hour Volume | `MAXX(SUMMARIZE(..., hour, "vol", COUNTROWS(...)), [vol])` | Staffing and surge planning input |
 
 ---
 
-## Data Source
+## 📦 Data Source
 
 | Attribute | Detail |
 |-----------|--------|
@@ -247,32 +248,55 @@ hospital-er-management-powerbi/
 
 ---
 
-### Reproduce the Analysis Locally
+## 🚀 How to Use
 
-**Prerequisites:** Microsoft Excel, SQL Server Management Studio (SSMS), Power BI Desktop (free)
+### 🔗 View Live Dashboard
 
-#### Excel
+> **⚠️ Live dashboard link coming soon** — paste your Power BI Publish to Web URL here once published.
+>
+> To publish: Power BI Desktop → File → Publish → Power BI Service → File → Embed Report → Publish to Web → Copy link
+
+---
+
+### 💻 Reproduce the Analysis Locally
+
+**Prerequisites:** Microsoft Excel · SQL Server Management Studio (SSMS) · [Power BI Desktop (free)](https://powerbi.microsoft.com/desktop/)
+
+---
+
+#### Step 1 — Excel
+
 ```
-1. Open: excel/ER_Data_Cleaning_Analysis.xlsx
-2. Review Power Query transformation steps and PivotTables
-3. Clean export already saved as: data/hospital_er_clean.csv
+1. Open:  excel/ER_Data_Cleaning_Analysis.xlsx
+2. Review Power Query transformation steps in the left panel
+3. Inspect PivotTables on each sheet for data profiling output
+4. Clean export already saved as:  data/hospital_er_clean.csv
 ```
 
-#### SQL Server — Run Scripts in SSMS
+---
 
+#### Step 2 — SQL Server (SSMS)
+
+Open SSMS and connect to your SQL Server instance, then run the scripts in order:
+
+```sql
+-- Step 1: Create schema and table
+-- File: sql/01_create_table.sql
+
+-- Step 2: Core KPI calculations
+-- File: sql/02_kpi_queries.sql
+
+-- Step 3: Demographic segmentation
+-- File: sql/03_demographics_analysis.sql
+
+-- Step 4: Referral flow analysis
+-- File: sql/04_referral_flow.sql
+
+-- Step 5: Create all Power BI views
+-- File: sql/05_create_views.sql
 ```
-1. Open SQL Server Management Studio (SSMS)
-2. Connect to your SQL Server instance
-3. Run scripts in the following order:
 
-   01_create_table.sql           -- Creates er schema and ER_Visits table
-   02_kpi_queries.sql            -- Core KPI calculations
-   03_demographics_analysis.sql  -- Demographic segmentation queries
-   04_referral_flow.sql          -- Department referral analysis
-   05_create_views.sql           -- Creates all 4 Power BI views
-
-4. Verify views were created successfully:
-```
+Verify all views were created successfully:
 
 ```sql
 SELECT * FROM er.vw_er_kpis;
@@ -281,17 +305,20 @@ SELECT * FROM er.vw_dept_referral;
 SELECT * FROM er.vw_monthly_trends;
 ```
 
-#### Power BI
+---
+
+#### Step 3 — Power BI
+
 ```
-1. Open: powerbi/ER_Operations_Dashboard.pbix
-2. Home → Transform Data → Data Source Settings
-3. Update the SQL Server connection string to your local instance
-4. Click Refresh — all 5 dashboard pages will populate automatically
+1. Open:   powerbi/ER_Operations_Dashboard.pbix
+2. Navigate to:  Home → Transform Data → Data Source Settings
+3. Update the SQL Server connection string to your local instance name
+4. Click:  Refresh All — all 5 dashboard pages will populate automatically
 ```
 
 ---
 
-## Screenshots
+## 🖼️ Screenshots
 
 ### Page 1 — Executive Overview
 ![Executive Overview](screenshots/01_executive_overview.png)
@@ -310,7 +337,7 @@ SELECT * FROM er.vw_monthly_trends;
 
 ---
 
-## Future Enhancements
+## 💡 Future Enhancements
 
 - [ ] Add **LWBS (Left Without Being Seen) rate** estimation using unrated patients as a proxy metric
 - [ ] Build a **30-day readmission analysis** by tracking return visits per patient ID
@@ -321,21 +348,33 @@ SELECT * FROM er.vw_monthly_trends;
 
 ---
 
-## Author
+## 👤 Author
 
 **Saiprasad Gone**
-Graduate Student - Health Informatics - Dec 2025
+Graduate Student — Health Informatics (Dec 2025)
 Aspiring Data Analyst | Healthcare Analytics
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](www.linkedin.com/in/saiprasad18)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=flat&logo=github)](https://github.com/Saiprasad7649/hospital-er-management-powerbi.git)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-6366F1?style=flat)](https://saiprasad7649.github.io/portfolio/)
+<div align="left">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Saiprasad%20Gone-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/saiprasad18)
+&nbsp;
+[![GitHub](https://img.shields.io/badge/GitHub-Saiprasad7649-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Saiprasad7649)
+&nbsp;
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit%20Site-6366F1?style=flat-square&logo=googlechrome&logoColor=white)](https://saiprasad7649.github.io/portfolio/)
+
+</div>
 
 ---
 
 <div align="center">
 
-⭐ If you found this project useful, please consider starring the repository
+### 📂 More Projects
+
+Explore my other analytics and data projects on [GitHub](https://github.com/Saiprasad7649) or visit my [Portfolio Website](https://saiprasad7649.github.io/portfolio/)
+
+---
+
+⭐ **If you found this project useful, please consider starring the repository — it helps others discover it.**
 
 *Built with Excel · SQL Server · Power BI · and a passion for healthcare analytics*
 
